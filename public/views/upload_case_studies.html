@@ -1,0 +1,69 @@
+
+<div class="container_full" ng-controller="UploadCtrl" data-ng-app="myApp">
+<div class="new">
+	<div class="user_form">
+		<form id="uploadForm" name="usercaseform" enctype="multipart/form-data" action="/upload" method="post" class="user_case_form">
+			<h3 class="upload_user_case">
+				<span>Upload Case Studies</span>
+			</h3>
+			 <div class="form-group" ng-class="{ 'has-error' : usercaseform.selectedTechnology.$error.required && !usercaseform.selectedTechnology.$pristine }">
+				<label class="user_label">Technology</label>
+				<div class="input-fields">
+					<select id="soflow" ng-model="upload.selectedTechnology" name="selectedTechnology" required>
+                    <option ng-repeat="tech in technologies" value="{{tech.technology}}">{{tech.technology}}</option>
+                    </select>
+                    <span ng-show="usercaseform.selectedTechnology.$dirty && usercaseform.selectedTechnology.$error.required"  class="help-block">Technology is required</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error' : usercaseform.selectedDomain.$error.required && !usercaseform.selectedDomain.$pristine }">
+				<label class="user_label">Industry</label>
+				<div class="input-fields">				
+					<select id="soflow" ng-model="upload.selectedDomain" name="selectedDomain" required>
+                    <option ng-repeat="dom in domain" value="{{dom.domain}}">{{dom.domain}}</option>
+                    </select>
+                    <span ng-show="usercaseform.selectedDomain.$dirty && usercaseform.selectedDomain.$error.required"  class="help-block">Industry is required</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error' : usercaseform.title.$error.required && !usercaseform.title.$pristine }">
+				<label class="user_label">Title</label>
+				<div class="input-fields">
+					<input class="form-controls" type="text" name="title" ng-model="upload.title" required  placeholder="Title" />
+					<span ng-show="usercaseform.title.$dirty && usercaseform.title.$error.required"  class="help-block">Title is required</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error' : usercaseform.description.$error.required && !usercaseform.description.$pristine }">
+				<label class="user_label">Description</label>
+				<div class="input-fields">
+					<input class="form-controls" type="text" name="description" ng-model="upload.description" required placeholder="Description" />
+					<span ng-show="usercaseform.description.$dirty && usercaseform.description.$error.required"  class="help-block">description is required</span>
+				</div>
+			</div> 
+			 <div class="form-group" ng-class="{ 'has-error' : usercaseform.userPhoto.$error.required && !usercaseform.userPhoto.$pristine }">
+				<label class="user_label">Image</label>
+				<div class="input-fields"> 
+					<!-- <input class="form-controls" id="upload_img" type="file" name="image_file" placeholder="Upload Image" /> -->
+					<!-- <input type="file" ng-file-select="onFileSelect($files)" multiple> -->
+					 <input type="file" class="uploadbtn uploadbtn2"  name="userPhoto" required />
+					 <span ng-show="usercaseform.userPhoto.$dirty && usercaseform.userPhoto.$error.required"  class="help-block">Image file is required</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error' : usercaseform.userPhoto.$error.required && !usercaseform.userPhoto.$pristine }">
+				<label class="user_label">PDF</label>
+				<div class="input-fields file_size">
+					<!-- <input class="form-controls" id="file_upload" type="file" name="pdf_file" placeholder="Upload Image" />
+					<label for="file_upload" id="chose_file">Upload PDF</label> -->
+					 <input type="file" class="uploadbtn uploadbtn2" name="userPhoto" required />
+					 <span ng-show="usercaseform.userPhoto.$dirty && usercaseform.userPhoto.$error.required"  class="help-block">pdf is required</span>
+					 <span class="blink">Size restriction 25MB</span>
+				</div>
+			</div> 
+			<div class="submit_button">
+				<input  type="submit" name="submit" class="sub_button_upload" ng-disabled="usercasrform.$invalid" value="Upload" />
+			</div>
+		</form>
+	</div>
+</div>
+	
+</div>
+
+

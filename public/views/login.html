@@ -1,0 +1,25 @@
+<div class="new" ng-controller="LoginCtrl" data-ng-app="myApp">
+	<div class="user_form user_login_form">
+		<form name="usercasrform" class="user_case_form" ng-submit="loginCredentials()">			 
+			<div class="form-group" ng-class="{ 'has-error' : usercasrform.username.$error.required && !usercasrform.username.$pristine }">
+				<label class="user_label">User Name</label>
+				<div class="input-fields">
+					<input class="form-controls" type="text" name="username" id="username" ng-model="login.username" placeholder="user name" required />
+					 <span ng-show="usercasrform.username.$dirty && usercasrform.username.$error.required"  class="help-block">Username is required</span>
+				</div>
+			</div>
+			<div class="form-group" ng-class="{ 'has-error' : usercasrform.password.$error.required && !usercasrform.password.$pristine }">
+				<label class="user_label">Password</label>
+				<div class="input-fields">
+					<input class="form-controls" type="password" name="password" id="password" ng-model="login.password" placeholder="password" required />
+					 <span ng-show="usercasrform.password.$dirty && usercasrform.password.$error.required"  class="help-block">Password is required</span>
+				</div>
+			</div>			 
+			 
+			<div class="submit_button">
+			<button type="submit"  ng-disabled="usercasrform.$invalid" class="sub_button_login">Login</button>
+				
+			</div>
+		</form>
+	</div>
+</div>

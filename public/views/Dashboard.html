@@ -1,0 +1,45 @@
+
+<div class="container_full" ng-controller="DashboardCtrl" data-ng-app="myApp">
+	<div class="container clearfix main_height">
+		<ul class="main_menu_list">
+			<li><a class="filter" href="javascript: void(0);">Filters</a></li>
+
+			<li class="dropdown">
+			   <div class="input-fields alignment">				
+                    <select ng-change="DropDownDomainChanged()" ng-options="dom.domain for dom in domains" ng-model="selectedDomain" class="styled-select blue semi-square">
+                    <option value="">--Select--</option>
+                    </select>
+				</div> 			
+			</li>
+
+			<li class="dropdown">
+			<div class="input-fields alignment-half">					
+                    <select ng-change="DropDownTechnologyChanged()" 
+                    ng-options="tech.technology for tech in technologies"  class="styled-select blue semi-square"
+                    ng-model="selectedTechnology">
+                    <option value="">--Select--</option>
+                    </select>
+			</div>
+			</li>
+		</ul>
+	</div>
+<div class="container technologies clearfix">
+		<div class="new">
+			<div class="texh_row clearfix">
+				<div class="rows">	
+					<ul class="media-list">
+		                <li class="media" ng-repeat="dashboard in dashboards">
+		                  <div align="center" class="list_technologies" align="center">
+						    <img ng-src="uploads/{{dashboard.imgurl}}" class="tech_images" alt={{dashboard.title}} /><a href="uploads/{{dashboard.pdfurl}}">
+						    <h5 class="tech_name">{{dashboard.title}}<img class="tool_top_images" src="images/tool-tip.png" /></h5>
+					      </div>     
+		                </li>
+		            </ul>
+		            
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+

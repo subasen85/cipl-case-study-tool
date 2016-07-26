@@ -1,0 +1,23 @@
+{
+  "name": "mean-application",
+  "version": "1.0.0",
+  "description": "edureka! Mean Application",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "edureka",
+  "license": "MIT",
+  "dependencies": {
+    "bcryptjs": "^2.3.0",
+    "body-parser": "1.15.0",
+    "chalk": "1.1.1",
+    "express": "4.13.4",
+    "mkdirp": "^0.5.1",
+    "mocha": "~2.3.3",
+    "mongoose": "4.4.4",
+    "multer": "1.1.0",
+    "should": "~7.1.0",
+    "supertest": "~1.1.0"
+  }
+}

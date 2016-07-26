@@ -1,0 +1,22 @@
+.but_upload{
+	background-color: #008CBA; /* Green */
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+	
+}
+.but_logout{
+	background-color: #008CBA; /* Green */
+    color: white;
+    padding: 5px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 8px;
+	
+}
